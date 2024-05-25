@@ -601,18 +601,18 @@ function parseLayout(value) {
 
   let errors = [];
 
-  if (leds.length !== maxIndex + 1) {
+  /*if (leds.length !== maxIndex + 1) {
     errors.push(`Layout has ${leds.length} LEDs but only ${maxIndex + 1} unique LED indices.`);
   }
   if (minIndex !== 0) {
     errors.push(`Layout should start at 0 instead of ${minIndex}.`);
-  } 
+  } */
   if (duplicateIndices.length > 0) {
     errors.push(`Duplicate indices found: ${duplicateIndices.join(', ')}.`);
   } 
-  if (gaps.length > 0) {
+  /*if (gaps.length > 0) {
     errors.push(`Gaps found at indices: ${gaps.join(', ')}.`);
-  }
+  }*/
 
   errors.forEach(error => console.error(error));
   document.getElementById('layoutError').innerHTML = errors.join('<br />');
